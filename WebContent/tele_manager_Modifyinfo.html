@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--IE渲染        -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-sacale=1"/>
+		<title>中国电信安徽分公司维保管理系统</title>
+		<!--描述：载入Bootstrap-->
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<style type="text/css">
+			.d1-right{
+				float: right;
+				margin-right: 80px;
+			}
+			#title-bule{
+				color:#00F;
+				font-size: x-large;
+				margin-left: 80px;
+			}
+			#grszbule{
+				color: #204D74;
+			}
+			#redspan{
+				background-color: red;
+				color: white;
+			}
+			#footer{
+				text-align: center;
+			}
+			marquee{
+				font: "微软雅黑";
+				color: #F84747;
+				font-size: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="navbar navbar-default">
+			<div class="navbar-header">
+			<a href="#" class="navbar-brand" id="title-bule">中国电信安徽分公司维保管理系统</a></span>
+			</div>
+			<div class="d1-right">
+			<ul class="nav navbar-nav">
+				<li style="width: 360px;"><marquee><br /><a href="examine.html">当前有10条记录未审核</a></marquee></li>
+				<li class="dropdown">
+					<a href="tele_manager_Modifyinfo.html" data-toggle="dropdown" class="dropdown-toggle" id=grszbule>个人设置<span class="caret"></span></a>
+					
+					<ul class="dropdown-menu">
+						<li><a href="tele_manager_Modifyinfo.html">个人信息修改</a></li>
+						<br/>
+						<li><a href="tele_manager_Modifyinfo.html">电信人员信息修改 </a></li>
+						<br/>
+						<li><a href="tele_manager_Modifyinfo.html">厂家人员信息修改</a></li>
+					</ul>
+				</li>
+				<li class="active"><a href="index_telecom.html">返回首页</a></li>
+				<li><a href="tele_examine.html" style="font-size: large;">审&nbsp;核&nbsp;<span class="badge" id="redspan">6</span></a></li>
+				<li><a href="telecom_query.html" style="font-size: large;">查&nbsp;询</a></li>
+				<li><a href="tele_report.html" style="font-size: large;">报&nbsp;表</a></li>
+				<li><a href="#" style="font-size: large;">退&nbsp;出</a></li>
+				<li>
+				</li>
+			</ul>
+			</div>
+		</div>
+		<!--以上固定格式-->
+		<div>
+			<ul id="myTab" class="nav nav-tabs">
+			<li class="active">
+				<a href="#selfchg" data-toggle="tab">
+					 个人信息修改
+				</a>
+			</li>
+			<li><a href="#caozuochg" data-toggle="tab">电信人员信息修改</a></li>
+			<li><a href="#changjiachg" data-toggle="tab">厂家人员信息修改</a></li>
+		</ul>
+		<br /><br />
+		<div id="myTabContent" class="tab-content">
+			<!--
+            	作者：offline
+            	时间：2017-05-29
+            	描述：个人信息修改
+            -->
+			<div class="tab-pane fade in active" id="selfchg">
+				<form class="form-horizontal" role="form">
+	<div class="form-group">
+		<br /><br />
+		<label class="col-sm-5 control-label">账号</label>
+		<div class="col-sm-2">
+			<input class="form-control" id="focusedInput" type="text"  value="">
+		</div>
+		<div class="col-sm-5"></div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-5 control-label">密码</label>
+		<div class="col-sm-2">
+			<input class="form-control" id="focusedInput" type="password"  value="">
+		</div>
+		<div class="col-sm-5"></div>
+	</div>
+		<div class="form-group">
+		<label class="col-sm-5 control-label">新密码</label>
+		<div class="col-sm-2">
+			<input class="form-control" id="focusedInput" type="password"  value="">
+		</div>
+		<div class="col-sm-5"></div>
+	</div>
+		<div class="form-group" id="phoneClass1">
+			<label class="col-sm-5 control-label">电话</label>
+				<div class="col-sm-2">
+					<input class="form-control" id="phone1" type="text"  value="" onchange="checkPhone('1')">
+				</div>
+			<div class="col-sm-5"></div>
+		</div>
+	<div class="form-group">
+			<label class="col-sm-5 control-label">公司</label>
+				<div class="col-sm-2">
+					<input class="form-control" id="focusedInput" type="text"  value="">
+				</div>
+			<div class="col-sm-5"></div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-5 control-label">职位</label>
+				<div class="col-sm-2">
+					<input class="form-control" id="focusedInput" type="text"  value="">
+				</div>
+			<div class="col-sm-5"></div>
+		</div>
+		<div class="form-group">
+	    <div class="col-sm-offset-5 col-sm-6">
+	    	<br />
+	      <button type="submit" class="btn btn-primary">确认修改</button>
+	    </div>
+	  </div>
+</form>
+<!--
+	作者：offline
+	时间：2017-05-30
+	描述：电信人员信息修改
+-->
+			</div>
+			<div class="tab-pane fade" id="caozuochg">
+				<div class="container">
+	<div class="col-lg-1"></div>
+	<div class="col-lg-10">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>电信人员ID</th>
+					<th>密码</th>
+					<th>姓名</th>
+					<th>手机号码</th>
+					<th>子区域</th>
+					<th>角色</th>
+					<th>主管ID</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td id="dxid1">124</td>
+					<td id="dxpw1">xxxxxx</td>
+					<td id="dxname1">乔峰</td>
+					<td id="dxphone1">18456456675</td>
+					<td id="dxarea1">六安</td>
+					<td id="dxjs1">电信人员</td>
+					<td id="dxzg1">33</td>
+					<td>
+						<a href="#"><span class="glyphicon glyphicon-cog" data-toggle="modal" data-target="#testmodal1" style="font-size: 14px;" onclick="dxclick(1)">修改&nbsp;&nbsp;&nbsp;</span></a>
+						<a href="#"><span class="glyphicon glyphicon-remove" style="font-size: 14px;">删除</span></a>
+						</button>
+					</td>
+				</tr>
+				<tr>
+					<td id="dxid2">125</td>
+					<td id="dxpw2">xxxxxx</td>
+					<td id="dxname2">慕容复</td>
+					<td id="dxphone2">15556456675</td>
+					<td id="dxarea2">合肥</td>
+					<td id="dxjs2">管理员</td>
+					<td id="dxzg2">0</td>
+					<td>
+						<a href="#"><span class="glyphicon glyphicon-cog" data-toggle="modal" data-target="#testmodal1" style="font-size: 14px;" onclick="dxclick(2)">修改&nbsp;&nbsp;&nbsp;</span></a>
+						<a href="#"><span class="glyphicon glyphicon-remove" style="font-size: 14px;">删除</span></a>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+				
+			</div>
+			<!--
+            	作者：offline
+            	时间：2017-05-30
+            	描述：3厂家人员信息修改
+            -->
+			<div class="tab-pane fade" id="changjiachg">
+				<div class="container">
+				<div class="col-lg-1"></div>	
+				<div class="col-lg-10">
+				<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>厂家人员ID</th>
+										<th>密码</th>
+										<th>姓名</th>
+										<th>手机号码</th>
+										<th>角色</th>
+										<th>厂商</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td id="cjid1">506</td>
+										<td id="cjpw1">xxxxxx</td>
+										<td id="cjname1">段誉</td>
+										<td id="cjphone1">18356456675</td>
+										<td id="cjjs1">维护人员</td>
+										<td id="cjcs1">中兴</td>
+										<td>
+								<a href="#"><span class="glyphicon glyphicon-cog" data-toggle="modal" data-target="#testmodal" style="font-size: 14px;" onclick="cjclick(1)">修改&nbsp;&nbsp;&nbsp;</span></a>
+								<a href="#"><span class="glyphicon glyphicon-remove" style="font-size: 14px;">删除</span></a>
+							</button></td>
+									</tr>
+									</tbody>
+									</table>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="col-lg-1"></div>
+		</div>
+		<!--
+        	作者：offline
+        	时间：2017-05-30
+        	描述：modal电信人员
+        -->
+        <div class="modal fade" id="testmodal1">
+			<div class="modal-dialog modal-dialog"> <!-- dialog对话框,sm小 lg大-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" onclick="closexx()" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span>
+							<span class="sr-only" >Close</span>
+						</button>
+						<h4 class="modal-title" style="text-align: center;font-size: 25px;">修改电信人员信息</h4>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal" role="form">
+	<div class="form-group">
+		<br /><br />
+		<label class="col-sm-3 control-label">账号ID</label>
+		<div class="col-sm-7">
+			<input class="form-control" id="dxidInput" type="text"  value="">
+		</div>
+		<div class="col-sm-2"></div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-3 control-label">新密码</label>
+		<div class="col-sm-7">
+			<input class="form-control" id="dxpwInput1" type="password"  value="">
+		</div>
+		<div class="col-sm-2"></div>
+	</div>
+		<div class="form-group">
+		<label class="col-sm-3 control-label">确认密码</label>
+		<div class="col-sm-7">
+			<input class="form-control" id="dxpwInput2" type="password"  value="">
+		</div>
+		<div class="col-sm-2"></div>
+	</div>
+		<div class="form-group" id="phoneClass3">
+			<label class="col-sm-3 control-label">姓名</label>
+				<div class="col-sm-7">
+					<input class="form-control" id="dxnameInput" type="text"  value="">
+				</div>
+			<div class="col-sm-2"></div>
+		</div>
+	<div class="form-group">
+			<label class="col-sm-3 control-label">手机</label>
+				<div class="col-sm-7">
+					<input class="form-control" id="dxphoneInput" type="text"  value="">
+				</div>
+			<div class="col-sm-2"></div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">子区域</label>
+				<div class="col-sm-7">
+					<input class="form-control" id="dxareaInput" type="text"  value="">
+				</div>
+			<div class="col-sm-2"></div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">角色</label>
+				<div class="col-sm-7">
+					<input class="form-control" id="dxjsInput" type="text"  value="">
+				</div>
+			<div class="col-sm-2"></div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">主管ID</label>
+				<div class="col-sm-7">
+					<input class="form-control" id="dxzgInput" type="text"  value="">
+				</div>
+			<div class="col-sm-2"></div>
+		</div>
+		<div class="form-group">
+	    <div class="col-sm-offset-5 col-sm-6">
+	    	<br />
+	      <button type="submit" class="btn btn-primary">确认修改</button>
+	    </div>
+	  </div>
+	  </form>
+				</div>
+			</div>
+		</div>
+		</div>
+		<!--
+        	作者：offline
+        	时间：2017-05-30
+        	描述：modal厂家人员
+        -->
+        <div class="modal fade" id="testmodal">
+			<div class="modal-dialog modal-dialog"> <!-- dialog对话框,sm小 lg大-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" onclick="closexx()" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span>
+							<span class="sr-only" >Close</span>
+						</button>
+						<h4 class="modal-title" style="text-align: center;font-size: 25px;">修改厂家人员信息</h4>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal" role="form">
+	<div class="form-group">
+		<br /><br />
+		<label class="col-sm-3 control-label">账号ID</label>
+		<div class="col-sm-7">
+			<input class="form-control" id="cjidInput" type="text"  value="">
+		</div>
+		<div class="col-sm-2"></div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-3 control-label">新密码</label>
+		<div class="col-sm-7">
+			<input class="form-control" id="cjpwInput1" type="password"  value="">
+		</div>
+		<div class="col-sm-2"></div>
+	</div>
+		<div class="form-group">
+		<label class="col-sm-3 control-label">确认密码</label>
+		<div class="col-sm-7">
+			<input class="form-control" id="cjpwInput2" type="password"  value="">
+		</div>
+		<div class="col-sm-2"></div>
+	</div>
+		<div class="form-group" id="phoneClass3">
+			<label class="col-sm-3 control-label">姓名</label>
+				<div class="col-sm-7">
+					<input class="form-control" id="cjnameInput" type="text"  value="" >
+				</div>
+			<div class="col-sm-2"></div>
+		</div>
+	<div class="form-group">
+			<label class="col-sm-3 control-label">手机</label>
+				<div class="col-sm-7">
+					<input class="form-control" id="cjphoneInput" type="text"  value="">
+				</div>
+			<div class="col-sm-2"></div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">角色</label>
+				<div class="col-sm-7">
+					<input class="form-control" id="cjjsInput" type="text"  value="">
+				</div>
+			<div class="col-sm-2"></div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">厂商</label>
+				<div class="col-sm-7">
+					<input class="form-control" id="cjcsInput" type="text"  value="">
+				</div>
+			<div class="col-sm-2"></div>
+		</div>
+		<div class="form-group">
+	    <div class="col-sm-offset-5 col-sm-6">
+	    	<br />
+	      <button type="submit" class="btn btn-primary">确认修改</button>
+	    </div>
+	  </div>
+	  </form>
+				</div>
+			</div>
+		</div>
+		</div>
+        
+		<!--以下固定格式-->
+		<br /><br /><br />
+		<hr />
+		<footer class="bottom" id="footer">
+		  <a href="">copyright © 安徽电信2017年运维人员IT培训营第9组,All Rights Reserved</a>
+		  <ol class="breadcrumb" style="background-color: white;">
+		    <li><a href="#">版本信息</a></li>
+		    <li><a href="#">关于我们</a></li>
+		    <li><a href="#">使用指南</a></li>
+		</ol>
+		</footer>
+	<script src="js/Chart-1.0.1-beta.4.js"></script>
+<script>
+	function function()
+		</script>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>
+	<script type="text/javascript" src="js/bootstrap.min.js">
+		$(function(){
+			$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+				// 获取已激活的标签页的名称
+				var activeTab = $(e.target).text(); 
+				// 获取前一个激活的标签页的名称
+				var previousTab = $(e.relatedTarget).text(); 
+				$(".active-tab span").html(activeTab);
+				$(".previous-tab span").html(previousTab);
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		function checkPhone(num){ 
+	    var phone = document.getElementById("phone"+num).value;
+	    if(!(/^1[3456789]\d{9}$/.test(phone))){ 
+		document.getElementById("phoneClass"+num).className = "form-group has-error";
+			}else{
+				document.getElementById("phoneClass"+num).className = "form-group";
+			}
+	    }
+		function checkPassword(num){
+			
+		}
+		function cjclick(i){
+			var cjid=document.getElementById("cjid"+i).innerHTML;
+			document.getElementById("cjidInput").value=cjid;
+			var cjpw=document.getElementById("cjpw"+i).innerHTML;
+			document.getElementById("cjpwInput1").value=cjpw;
+			document.getElementById("cjpwInput2").value=cjpw;
+			var cjname = document.getElementById("cjname"+i).innerHTML;
+			document.getElementById("cjnameInput").value=cjname;
+			var cjphone = document.getElementById("cjphone"+i).innerHTML;
+			document.getElementById("cjphoneInput").value=cjphone;
+			var cjjs = document.getElementById("cjjs"+i).innerHTML;
+			document.getElementById("cjjsInput").value=cjjs;
+			var cjcs = document.getElementById("cjcs"+i).innerHTML;
+			document.getElementById("cjcsInput").value=cjcs;
+		}
+		function dxclick(i){
+			var dxid=document.getElementById("dxid"+i).innerHTML;
+			document.getElementById("dxidInput").value=dxid;
+			var dxpw=document.getElementById("dxpw"+i).innerHTML;
+			document.getElementById("dxpwInput1").value=dxpw;
+			document.getElementById("dxpwInput2").value=dxpw;
+			var dxname = document.getElementById("dxname"+i).innerHTML;
+			document.getElementById("dxnameInput").value=dxname;
+			var dxphone = document.getElementById("dxphone"+i).innerHTML;
+			document.getElementById("dxphoneInput").value=dxphone;
+			var dxjs = document.getElementById("dxjs"+i).innerHTML;
+			document.getElementById("dxjsInput").value=dxjs;
+			var dxarea = document.getElementById("dxarea"+i).innerHTML;
+			document.getElementById("dxareaInput").value=dxarea;
+			var dxzg = document.getElementById("dxzg"+i).innerHTML;
+			document.getElementById("dxzgInput").value=dxarea;
+		}
+	</script>
+</html>
